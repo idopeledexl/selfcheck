@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+		<link rel="stylesheet" type="text/css" href="css/self-check.css" />
+		<link href="http://fonts.googleapis.com/css?family=Ubuntu:300|Orienta" rel="stylesheet" type="text/css">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+		<script type="text/javascript" src="js/self-check.js"></script>
+		
+		<title>Old Dominion University - Self Check</title>
+		
+		<script type="text/javascript">
+		</script>
+	</head>
+	
+	<body onload="javascript:initiate();">
+		<div class="toptoolbar">
+			<div class="logo"><img src="images/logo.png" height="52px" /></div>
+		</div>
+		<br/>
+		
+		<div class="maincontent smallbox" id="loginbox">
+			<div class="h1title">Self-Check Service</div>
+			<br/><br/>
+			<div class="databox">
+				<div class="h2title">Please scan or type your ID:</div>
+				<div>
+					<div class="hide errormessage" id="loginerror">Inccorect ID, please try again<br/></div>
+					<input type="text" id="userid" placeholder="ID..."  />
+					<br/><br/>
+					<input type="button" value="Submit" onclick="javascript:login();"/>
+				</div>
+			</div>
+			<br/><br/>
+		</div>
+		
+		<div class="maincontent largebox hide" id="scanbox">
+			<div class="h1title" id="scanboxtitle"></div>
+			<div class="databox">
+				<div>
+					<table cellpadding="0px" cellspacing="0px" class="headertable">
+						<tr>
+							<td><span class="headertablekey">Loans:</span>&nbsp;<span class="headertablevalue" id="userloans"></span></td>
+							<td><span class="headertablekey">Requests:</span>&nbsp;<span class="headertablevalue" id="userrequests"></span></td>
+							<td><span class="headertablekey">Fines & Fees:</span>&nbsp;<span class="headertablevalue" id="userfees"></span></td>
+							<!-- <td><span class="headertablekey">Notes:</span>&nbsp;<span class="headertablevalue" id="usernotes"></span></td> -->
+							<td><input type="button" value="Logout" onclick="javascript:logout();"/></td>
+						</tr>
+					</table>
+				</div>
+				<br/><br/>
+				<div class="h2title">Please scan or type your next item:</div>
+				<div>
+					<input type="text" id="barcode" placeholder="Barcode..." />
+				</div>
+				<br/>
+				<div>
+					<table cellpadding="0px" cellspacing="0px" class="loanstable" id="loanstable">
+						<tr>
+							<th>Title</th>
+							<th>Due Date</th>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<br/><br/>
+		</div>
+		<br/><br/>
+
+		<!-- Trigger/Open The Modal -->
+		<div id="myModal" class="modal">
+
+			<!-- Modal content -->
+			<div class="modal-content" id="modalbox">
+				<span class="close">x</span>
+				<div id="modalheader" class="modalheaderdiv"></div>
+				<div id="modalcontent">
+				</div>
+			</div>
+		</div>
+
+
+	</body>
+</html>
